@@ -1,3 +1,5 @@
+Diese Modifikation verwendet deutsche Begriffe in der Ausgabe.
+
 TeXDoclet
 =========
 
