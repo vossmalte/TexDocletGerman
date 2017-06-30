@@ -681,7 +681,7 @@ public class TeXDoclet extends Doclet {
 
 			addFile(os, packageFile, false);
 
-			os.println("\\" + sectionLevels[0] + "{Package "
+			os.println("\\" + sectionLevels[0] + "{Paket "
 					+ HTMLtoLaTeXBackEnd.fixText(pkg.pkg) + "}{");
 
 			os.print("\\label{" + refName(makeRefKey(pkg.pkg)) + "}");
@@ -1039,11 +1039,11 @@ public class TeXDoclet extends Doclet {
 
 		os.println("\\" + sectionLevels[0] + "{Klassenhierachie}{");
 
-		os.println("\\thispagestyle{empty}");
-		os.println("\\markboth{Klassenhierachie}{Klassenhierachie}");
+		//os.println("\\thispagestyle{empty}");
+		//os.println("\\markboth{Klassenhierachie}{Klassenhierachie}");
 
-		os.println("\\addcontentsline{toc}{" + sectionLevels[0]
-				+ "}{Klassenhierachie}");
+		//os.println("\\addcontentsline{toc}{" + sectionLevels[0]
+		//		+ "}{Klassenhierachie}");
 
 		// Classes
 		ClassHierachy classHierachy = new ClassHierachy();
@@ -1056,7 +1056,7 @@ public class TeXDoclet extends Doclet {
 		}
 		if (classHierachy.root.size() != 0) {
 
-			os.println("\\" + sectionLevels[1] + "*{Classes}");
+			os.println("\\" + sectionLevels[1] + "*{Klassen}");
 
 			os.println("{\\raggedright");
 
@@ -1075,7 +1075,7 @@ public class TeXDoclet extends Doclet {
 			}
 		}
 		if (interfaceHierachy.root.size() != 0) {
-			os.println("\\" + sectionLevels[1] + "*{Interfaces}");
+			os.println("\\" + sectionLevels[1] + "*{Schnittstellen}");
 			interfaceHierachy.printTree(root, overviewindent);
 		}
 
@@ -1089,7 +1089,7 @@ public class TeXDoclet extends Doclet {
 			}
 		}
 		if (exceptionHierachy.root.size() != 0) {
-			os.println("\\" + sectionLevels[1] + "*{Exceptions}");
+			os.println("\\" + sectionLevels[1] + "*{Ausnahmen}");
 			exceptionHierachy.printTree(root, overviewindent);
 		}
 
@@ -1127,7 +1127,7 @@ public class TeXDoclet extends Doclet {
 
 			os.print("\\" + sectionLevels[1] + "{");
 
-			String mtype = "Class";
+			String mtype = "Klasse";
 			if (type.equals("Interfaces")) {
 				mtype = "Interface";
 			}
@@ -1734,9 +1734,9 @@ public class TeXDoclet extends Doclet {
 			}
 			os.println("\\item{");
 			if (copiedTo == null) {
-				os.println(BOLD + " Description}\n");
+				os.println(BOLD + " Beschreibung}\n");
 			} else {
-				os.print(BOLD + " Description copied from ");
+				os.print(BOLD + " Beschreibung kopiert von");
 				String classname = mem.containingClass().qualifiedName();
 				if (hyperref) {
 					os.print("\\hyperlink{" + refName(makeRefKey(classname))
@@ -1761,7 +1761,7 @@ public class TeXDoclet extends Doclet {
 				yet = true;
 			}
 			os.println("\\item{");
-			os.println(BOLD + " Parameters}");
+			os.println(BOLD + " Parameter}");
 			os.println("  \\begin{itemize}");
 			for (int j = 0; j < params.length; ++j) {
 				os.println("   \\item{");
