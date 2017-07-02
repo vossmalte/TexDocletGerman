@@ -963,7 +963,7 @@ public class TeXDoclet extends Doclet {
 		os.println("\\newcommand{\\refdefined}[1]{");
 		os.println("\\expandafter\\ifx\\csname r@#1\\endcsname\\relax");
 		os.println("\\relax\\else");
-		os.println("{$($in \\ref{#1}, page \\pageref{#1}$)$}\\fi}");
+		os.println("{$($in \\ref{#1}, Seite \\pageref{#1}$)$}\\fi}");
 	}
 
 	/**
