@@ -1864,7 +1864,7 @@ public class TeXDoclet extends Doclet {
 			// do not user true type and do not print full name here
 			// because this produces an ugly view in the Contents section
 			// os.print("Members inherited from class "+TRUETYPE+""
-			os.print("Members inherited from class "
+			os.print("Geerbte Methoden von Klasse "
 					+ HTMLtoLaTeXBackEnd.fixText(par.name()) + " ");
 			os.println("}{");
 
