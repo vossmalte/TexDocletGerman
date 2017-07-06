@@ -1233,14 +1233,16 @@ public class TeXDoclet extends Doclet {
 			}
 
 			if (cd.isInterface()) {
-				if (!subclasses.equals("")) {
+				// we dont want subinterfaces to be printed
+				// as the implementations are also printed
+				if (false && !subclasses.equals("")) {
 					os.println("\\" + sectionLevels[2]
 							+ "{Alle bekannten erbenden Interfaces}{" + subclasses + "}");
 				}
 			} else {
 				if (!subclasses.equals("")) {
 					os.println("\\" + sectionLevels[2]
-							+ "{Alle beknannten erbenden Klassen}{" + subclasses + "}");
+							+ "{Erbende Klassen}{" + subclasses + "}");
 				}
 			}
 
@@ -1279,7 +1281,7 @@ public class TeXDoclet extends Doclet {
 
 				if (!implclasses.equals("")) {
 					os.println("\\" + sectionLevels[2]
-							+ "{Alle bekannten Klassen, die diese Schnittstelle implementieren}{"
+							+ "{Implementierende Klassen}{"
 							+ implclasses + "}");
 				}
 			}
