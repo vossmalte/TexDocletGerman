@@ -1037,13 +1037,14 @@ public class TeXDoclet extends Doclet {
 
 	static void printClassHierarchy(RootDoc root) {
 
-		os.println("\\" + sectionLevels[0] + "{Klassenhierachie}{");
+		os.println("\\" + sectionLevels[0] + "{Klassenhierarchie}{");
+		os.println("\\IfFileExists{klassenhierarchie.tex}{\\input{klassenhierarchie.tex}}{}");
 
 		//os.println("\\thispagestyle{empty}");
-		//os.println("\\markboth{Klassenhierachie}{Klassenhierachie}");
+		//os.println("\\markboth{klassenhierarchie}{klassenhierarchie}");
 
 		//os.println("\\addcontentsline{toc}{" + sectionLevels[0]
-		//		+ "}{Klassenhierachie}");
+		//		+ "}{klassenhierarchie}");
 
 		// Classes
 		ClassHierachy classHierachy = new ClassHierachy();
